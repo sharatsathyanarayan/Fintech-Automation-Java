@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Fintech Suite" verbose="1" parallel="false">
+  <listeners>
+    <listener class-name="com.example.fintech.util.TestListener"/>
+  </listeners>
+  <test name="API Tests">
+    <classes>
+      <class name="com.example.fintech.wiremock.MockServerSuite"/>
+       <class name="com.example.fintech.api.UsersApiTests"/>
+      <class name="com.example.fintech.api.TransactionsApiTests"/>
+    </classes>
+  </test>
+  <test name="UI Tests">
+    <classes>
+      <class name="com.example.fintech.ui.UiTests"/>
+    </classes>
+  </test>
+</suite>
